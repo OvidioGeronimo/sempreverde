@@ -8,12 +8,11 @@ const routes: Routes = [
     component: TabsPage,
     children: [
       {
-        path: 'tab1',
+        path: 'produtos',
         children: [
           {
             path: '',
-            loadChildren: () =>
-              import('../tab1/tab1.module').then(m => m.Tab1PageModule)
+            loadChildren: '../produtos/lista-produtos/lista-produtos.module#ListaProdutosPageModule'
           }
         ]
       },
@@ -39,14 +38,28 @@ const routes: Routes = [
       },
       {
         path: '',
-        redirectTo: '/tabs/tab1',
+        redirectTo: '/tabs/produtos',
         pathMatch: 'full'
       }
     ]
   },
+  // {
+  //   path: '',
+  //   redirectTo: '/tabs/produtos',
+  //   pathMatch: 'full'
+  // },
+  {
+    path: 'pedido',
+    children: [
+      {
+        path: 'carrinho/novo-item/:key',
+        loadChildren: '../pedidos/form-item-pedido/form-item-pedido.module#FormItemPedidoPageModule'
+      },
+    ]
+  },
   {
     path: '',
-    redirectTo: '/tabs/tab1',
+    redirectTo: '/tabs/produtos',
     pathMatch: 'full'
   }
 ];
