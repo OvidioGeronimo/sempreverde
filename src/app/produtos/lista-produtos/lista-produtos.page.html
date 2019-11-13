@@ -1,6 +1,6 @@
 <ion-header>
-  <ion-toolbar color="primary">
-    <ion-title>Produtos</ion-title>
+  <ion-toolbar color="success">
+    <ion-title>Cardapio</ion-title>
   </ion-toolbar>
 </ion-header>
 
@@ -26,7 +26,7 @@
         <h2>{{ produto.categoriaNome }}</h2>
         <pre text-wrap>{{ produto.descricao }}</pre>
         <span>{{ produto.preco | currency:'BRL' }}</span>
-        <!-- <app-valor [valor]="produto.preco"></app-valor> -->
+        <app-valor [valor]="produto.preco"></app-valor>
       </ion-label>
     </ion-item>
   </ion-list>

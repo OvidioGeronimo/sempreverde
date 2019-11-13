@@ -4,6 +4,7 @@ import { CarrinhoService } from './carrinho.service';
 import { AngularFireAuth } from '@angular/fire/auth';
 import { DatePipe } from '@angular/common';
 import { FirebasePath } from 'src/app/core/shared/firebase-path';
+import { map } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'

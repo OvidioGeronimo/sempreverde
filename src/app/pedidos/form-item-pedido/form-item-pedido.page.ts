@@ -21,11 +21,12 @@ export class FormItemPedidoPage implements OnInit {
                 private carrinhoService: CarrinhoService,
                 private toast: ToastService) { }
   
-  ngOnInit() {this.criarFormulario();
+  ngOnInit() {
+    this.criarFormulario();
     // comentário...
     let key = this.route.snapshot.paramMap.get('key');
     if (key) {
-      const subscribe = this.produtosService.getByKey(key).subscribe( (produto: any) => {
+        const subscribe = this.produtosService.getByKey(key).subscribe( (produto: any) => {
         subscribe.unsubscribe();
         this.produto = produto;
 
