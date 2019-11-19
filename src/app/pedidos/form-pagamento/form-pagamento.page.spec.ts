@@ -1,22 +1,22 @@
 import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ListaPedidoComponent } from './lista-pedido.component';
+import { FormPagamentoPage } from './form-pagamento.page';
 
-describe('ListaPedidoComponent', () => {
-  let component: ListaPedidoComponent;
-  let fixture: ComponentFixture<ListaPedidoComponent>;
+describe('FormPagamentoPage', () => {
+  let component: FormPagamentoPage;
+  let fixture: ComponentFixture<FormPagamentoPage>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ ListaPedidoComponent ],
+      declarations: [ FormPagamentoPage ],
       schemas: [CUSTOM_ELEMENTS_SCHEMA],
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(ListaPedidoComponent);
+    fixture = TestBed.createComponent(FormPagamentoPage);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
