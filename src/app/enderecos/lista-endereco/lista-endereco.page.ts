@@ -1,10 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { Observable } from 'rxjs';
 import { AlertService } from 'src/app/core/shared/alert.service';
 import { ToastService } from 'src/app/core/shared/toast.service';
 import { Router } from '@angular/router';
 import { ModalController } from '@ionic/angular';
-import { EnderecoService } from '../endereco.service';
+import { EnderecoService } from '../shared/endereco.service';
 
 @Component({
   selector: 'app-lista-endereco',

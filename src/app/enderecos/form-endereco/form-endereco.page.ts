@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
 import { ToastService } from 'src/app/core/shared/toast.service';
-import { EnderecoService } from '../endereco.service';
+import { EnderecoService } from '../shared/endereco.service';
 
 @Component({
   selector: 'app-form-endereco',

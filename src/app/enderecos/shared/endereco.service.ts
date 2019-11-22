@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { AngularFireDatabase } from '@angular/fire/database';
 import { AngularFireAuth } from '@angular/fire/auth';
-import { FirebasePath } from '../core/shared/firebase-path';
+import { FirebasePath } from '../../core/shared/firebase-path';
 import { map } from 'rxjs/operators';
 
 @Injectable({

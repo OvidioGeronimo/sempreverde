@@ -6,6 +6,7 @@ import { Observable } from 'rxjs';
 import { CarrinhoService } from '../shared/carrinho.service';
 import { PedidoService } from '../shared/pedido.service';
 import { ModalController } from '@ionic/angular';
+import { ListaEnderecoPage } from 'src/app/enderecos/lista-endereco/lista-endereco.page';
 
 @Component({
   selector: 'app-form-pagamento',
