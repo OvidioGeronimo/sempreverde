@@ -23,8 +23,10 @@ export class PedidoService {
     ENTREGUE: 3
   };
 
-  constructor(private db: AngularFireDatabase, private afAuth: AngularFireAuth,
-              private carrinhoService: CarrinhoService, private dateFormat: DatePipe) { }
+  constructor(private db: AngularFireDatabase,
+              private afAuth: AngularFireAuth,
+              private carrinhoService: CarrinhoService,
+              private dateFormat: DatePipe) { }
 
 
 

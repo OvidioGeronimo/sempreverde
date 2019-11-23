@@ -12,6 +12,8 @@ import { AngularFireModule } from '@angular/fire';
 import { firebaseconfig } from 'src/firebase-config';
 import { AngularFireDatabaseModule } from '@angular/fire/database';
 import { AngularFireAuthModule } from '@angular/fire/auth';
+import { DatePipe } from '@angular/common';
+
 
 @NgModule({
   declarations: [AppComponent],
@@ -27,7 +29,8 @@ import { AngularFireAuthModule } from '@angular/fire/auth';
             providers: [
             StatusBar,
             SplashScreen,
-            { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }
+            { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
+            DatePipe
   ],
   bootstrap: [AppComponent]
 })
