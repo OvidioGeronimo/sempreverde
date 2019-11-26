@@ -1,6 +1,6 @@
 <ion-header>
   <ion-toolbar color="success">
-    <ion-title>Cardapio</ion-title>
+    <ion-title color="dark">Cardapio</ion-title>
   </ion-toolbar>
 </ion-header>
 
@@ -14,7 +14,6 @@
         <ion-select-option *ngFor="let categoria of categorias | async" [value]="categoria.key">{{ categoria.nome }}
         </ion-select-option>
       </ion-select>
-
     </ion-item>
 
     <ion-item *ngFor="let produto of produtos | async" (click)="adicionarProduto(produto.key)">
@@ -25,15 +24,15 @@
         <h1>{{ produto.nome }}</h1>
         <h2>{{ produto.categoriaNome }}</h2>
         <pre text-wrap>{{ produto.descricao }}</pre>
-        <span>{{ produto.preco | currency:'BRL' }}</span>
+        <!-- <span>{{ produto.preco | currency:'BRL' }}</span> -->
         <app-valor [valor]="produto.preco"></app-valor>
       </ion-label>
     </ion-item>
   </ion-list>
 
   <ion-fab vertical="bottom" horizontal="end" slot="fixed" *ngIf="carrinhoPossuiItens">
-    <ion-fab-button [routerLink]="['/pedido/carrinho']" color="warning">
-      <ion-icon name="cart"></ion-icon>
+    <ion-fab-button [routerLink]="['/pedido/carrinho']" color="success">
+      <ion-icon name="cart" color="dark"></ion-icon>
     </ion-fab-button>
   </ion-fab>
 </ion-content>

@@ -15,6 +15,7 @@ const routes: Routes = [
   { path: 'criar-mesas', loadChildren: './mesas/criar-mesas/criar-mesas.module#CriarMesasPageModule' },
   { path: 'esqueci-senha', loadChildren: './mesas/esqueci-senha/esqueci-senha.module#EsqueciSenhaPageModule' },
   { path: 'login', loadChildren: './mesas/login/login.module#LoginPageModule' },
+  { path: 'splash', loadChildren: './inicio/splash/splash.module#SplashPageModule' },
   // { path: 'perfil', loadChildren: './mesas/perfil/perfil.module#PerfilPageModule' },
   // { path: 'form-endereco', loadChildren: './enderecos/form-endereco/form-endereco.module#FormEnderecoPageModule' },
   // { path: 'lista-endereco', loadChildren: './enderecos/lista-endereco/lista-endereco.module#ListaEnderecoPageModule' }

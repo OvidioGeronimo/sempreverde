@@ -3,7 +3,7 @@
     <ion-buttons slot="start">
       <ion-back-button></ion-back-button>
     </ion-buttons>
-    <ion-title>Confirme seu pedido</ion-title>
+    <ion-title color="dark">Confirme seu pedido</ion-title>
   </ion-toolbar>
 </ion-header>
 
@@ -24,12 +24,12 @@
         <ion-row>
           <ion-col>
             <ion-button expand="block" color="success" (click)="adicionarQuantidade()">
-              <ion-icon name="add"></ion-icon>
+              <ion-icon color="dark" name="add"></ion-icon>
             </ion-button>
           </ion-col>
           <ion-col>
             <ion-button expand="block" color="success" (click)="removerQuantidade()">
-              <ion-icon name="remove"></ion-icon>
+              <ion-icon color="dark" name="remove"></ion-icon>
             </ion-button>
           </ion-col>
         </ion-row>
@@ -48,7 +48,7 @@
     </ion-item>
 
     <div margin-vertical>
-      <ion-button expand="block" color="success" type="submit">Adicionar ao carrinho</ion-button>
+      <ion-button expand="block" color="success" type="submit">Adicionar</ion-button>
     </div>
   </form>
 </ion-content>
