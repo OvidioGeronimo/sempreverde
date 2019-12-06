@@ -33,7 +33,7 @@ export class LoginPage implements OnInit {
     if (this.formLogin.valid) {
       this.usuariosService.login(this.formLogin.value.email, this.formLogin.value.senha)
         .then(() => {
-          this.router.navigate(['/']);
+          this.router.navigate(['/']);// tenho que usar 
         })
         .catch((mensagem: string) => {
           this.toast.show(mensagem);

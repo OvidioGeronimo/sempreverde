@@ -10,6 +10,8 @@ import { map } from 'rxjs/operators';
   providedIn: 'root'
 })
 export class PedidoService {
+  mesastatus: string = '10';
+  total: number;
 
   public static TIPO_FORMA_PAGAMENTO = {
     DINHEIRO: 1,
@@ -28,14 +30,20 @@ export class PedidoService {
               private carrinhoService: CarrinhoService,
               private dateFormat: DatePipe) { }
 
+    getTotalPedido() {
+         const subscribe = this.carrinhoService.getTotalPedido().subscribe( (total: number) => {
+               subscribe.unsubscribe();
+               this.total = total;
+          })
+    }
+            
 
-
-    gerarPedido(pedido: any){
+    gerarPedido(){
       return new Promise( (resolve, reject) => {
         const subscribe = this.carrinhoService.getAll().subscribe(produtos => {
           subscribe.unsubscribe();
   
-          const pedidoRef = this.criarObjetoPedido(pedido);
+          const pedidoRef = this.criarObjetoPedido();
           const pedidoKey = this.db.createPushId();
           const pedidoPath = `${FirebasePath.PEDIDOS}${pedidoKey}`;
   
@@ -65,22 +73,19 @@ export class PedidoService {
       })
     }
 
-    private criarObjetoPedido(pedido: any){
+    private criarObjetoPedido(){
       const numeroPedido = '#' + this.dateFormat.transform(new Date(), 'ddMMyyyyHHmmss');
       const dataPedido = this.dateFormat.transform(new Date(), 'dd/MM/yyyy');
+      this.getTotalPedido();
+      
       let pedidoRef = {
         numero: numeroPedido,
         status: PedidoService.STATUS.ENVIADO,
         data: dataPedido,
-        formPagamento: pedido.formaPagamento,//form
-        trocoPara: pedido.trocoPara,
-        tipoCartao: pedido.tipoCartao,
-        enderecoEntrega: pedido.enderecoEntrega,
-        usuarioKey: this.afAuth.auth.currentUser.uid,
-        usuarioNome: this.afAuth.auth.currentUser.displayName,
+        mesa: '10',
         // Tecnica para filtro de varios campos
-        usuarioStatus: this.afAuth.auth.currentUser.uid + '_' + PedidoService.STATUS.ENVIADO,
-        total: pedido.total
+        mesaStatus: this.mesastatus + '_' + PedidoService.STATUS.ENVIADO,
+        total: this.total
       }
       return pedidoRef;
     }
@@ -92,7 +97,7 @@ export class PedidoService {
         case PedidoService.STATUS.CONFIRMADO:
           return 'Em preparação';
         case PedidoService.STATUS.SAIU_PARA_ENTREGA:
-          return 'Saiu para entrega';
+          return 'Saiu para mesa';
         case PedidoService.STATUS.ENTREGUE:
           return 'Entregue';
       }

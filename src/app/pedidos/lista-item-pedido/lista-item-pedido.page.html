@@ -1,9 +1,9 @@
 <ion-header>
-  <ion-toolbar color="primary">
+  <ion-toolbar color="success">
     <ion-buttons slot="start">
       <ion-back-button></ion-back-button>
     </ion-buttons>
-    <ion-title>Carrinho</ion-title>
+    <ion-title color="dark">Carrinho</ion-title>
   </ion-toolbar>
 </ion-header>
 
@@ -20,16 +20,16 @@
         <ion-grid>
           <ion-row align-items-center>
             <ion-col>
-              <ion-button expand="block" color="primary" (click)="adicionarQuantidade(item)">
-                <ion-icon name="add"></ion-icon>
+              <ion-button expand="block" color="success" (click)="adicionarQuantidade(item)">
+                <ion-icon color="dark" name="add"></ion-icon>
               </ion-button>
             </ion-col>
             <ion-col text-center>
               {{ item.quantidade }}
             </ion-col>
             <ion-col>
-              <ion-button expand="block" color="primary" (click)="removerQuantidade(item)">
-                <ion-icon name="remove"></ion-icon>
+              <ion-button expand="block" color="success" (click)="removerQuantidade(item)">
+                <ion-icon color="dark" name="remove"></ion-icon>
               </ion-button>
             </ion-col>
           </ion-row>
@@ -44,8 +44,11 @@
     <app-valor [valor]="total"></app-valor>
   </p>
 
-  <ion-button expand="block" size="large" [routerLink]="['/pedido/forma-pagamento']">
-    Forma de pagamento
+  <ion-button color="success" expand="block" size="large" (click)="onSubmit()">
+    <ion-title color="dark">Finalizar Pedido</ion-title>
     <ion-icon slot="end" name="arrow-forward"></ion-icon>
   </ion-button>
+
+
+
 </ion-footer>

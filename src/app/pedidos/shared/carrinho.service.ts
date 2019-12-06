@@ -8,11 +8,13 @@ import { map } from 'rxjs/operators';
   providedIn: 'root'
 })
 export class CarrinhoService {
-
+   mesa = 10;
   constructor(private db: AngularFireDatabase, private afAuth: AngularFireAuth) { }
 
   getCarrinhoProdutosRef(){
-    const path = `${FirebasePath.CARRINHO}${this.afAuth.auth.currentUser.uid}/${FirebasePath.PRODUTOS}`;
+    //e aqui que vou trocar o id do usuario pela mesa 
+    // const path = `${FirebasePath.CARRINHO}${this.afAuth.auth.currentUser.uid}/${FirebasePath.PRODUTOS}`;
+    const path = `${FirebasePath.CARRINHO}${this.mesa}/${FirebasePath.PRODUTOS}`;
     return this.db.list(path);
   }
   insert(itemProduto: any){

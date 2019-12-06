@@ -15,7 +15,7 @@ export class ListaProdutosPage implements OnInit {
   categorias: Observable<any[]>;
   categoriaSelecionada: string;
   carrinhoPossuiItens: boolean = false;
-
+  mesa: string;
   constructor(private router: Router,
               private produtosService: ProdutosService,
               private carrinhoService: CarrinhoService

@@ -27,12 +27,14 @@
         </ion-item>
 
         <!-- se for dinheiro -->
+
         <ion-item *ngIf="form.value.formaPagamento == 1">
           <ion-label>Troco para</ion-label>
           <ion-input type="number" step="1" formControlName="trocoPara"></ion-input>
         </ion-item>
 
         <!-- se for cartão -->
+
         <ion-item *ngIf="form.value.formaPagamento == 2">
           <ion-label>Qual cartão</ion-label>
           <ion-select formControlName="tipoCartao">
@@ -46,6 +48,7 @@
       </ion-item-group>
 
       <!-- Grupo endereço de entrega -->
+
       <ion-item-group>
         <ion-item-divider color="light">
           <ion-label>
@@ -69,6 +72,7 @@
       </ion-item-group>
 
       <!-- Grupo produtos do pedido -->
+
       <ion-item-group>
         <ion-item-divider color="light">
           <ion-label>

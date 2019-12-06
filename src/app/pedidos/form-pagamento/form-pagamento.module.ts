@@ -4,8 +4,9 @@ import { FormsModule } from '@angular/forms';
 import { Routes, RouterModule } from '@angular/router';
 
 
-import { FormPagamentoPage } from './form-pagamento.page';
+
 import { SharedModule } from 'src/app/core/shared/shared/shared.module';
+import { FormPagamentoPage } from './form-pagamento.page';
 
 const routes: Routes = [
   {
